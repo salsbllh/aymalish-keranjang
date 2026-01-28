@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AYMALISH Florist - Kontak</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="css/AYMALISH.css" />
+  <link rel="stylesheet" href="contact.css" />
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="AYMALISH.html" class="navbar-logo"> AYMALISH <span>FLORIST</span> </a>
+
+    <div class="navbar-nav">
+      <a href="AYMALISH.html#home">Home</a>
+      <a href="AYMALISH.html#about">Tentang Kami</a>
+      <a href="AYMALISH.html#collection">Produk</a>
+      <a href="contact.html" class="active">Kontak</a>
+      <a href="AYMALISH.html#review">Ulasan</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+    </div>
+
+    <div class="shopping-cart">
+      <div class="cart-item">
+        <img src="img/single.jpg" alt="Single Bouquet">
+        <div class="item-detail">
+          <h3>Single Bouquet</h3>
+          <div class="item-price">IDR 10K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+    </div>
+    </nav>
+  <section id="contact" class="contact" style="margin-top: 10rem;">
+    <p id="keterangan" class="desc">
+      A harmonious blend of art and warmth, this wire and feather night lamp transforms any room into a tranquil haven. Its delicate design emits a soft, soothing glow that gently embraces the night, illuminating your space with elegance while wrapping your heart in a comforting warmth. A masterpiece that doesn’t just light up your room, but also your soul..
+    </p>
+
+    <div class="kontak-grid">
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7920.426680891369!2d108.48515083962265!3d-6.984130811320753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1768783620149!5m2!1sid!2sid" loading="lazy"></iframe>
+      </div>
+
+      <form class="form" id="contactForm">
+        <input type="text" id="nama" placeholder="Nama" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="hp" placeholder="Nomor Handphone" required>
+        <textarea id="pesan" rows="4" placeholder="Pesan" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    feather.replace();
+  </script>
+
+  <script src="js/AYMALISHH.js"></script>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const hp = document.getElementById("hp").value;
+      const pesan = document.getElementById("pesan").value;
+
+      const sheetURL = "https://script.google.com/macros/s/AKfycbyQUo3SMClBKSh9HpoZPJjV6d04MBEhKKDsTBwJLW-n9-5ODyuUf8m-SsZGfsrDz1B2/exec"
+        + "?nama=" + encodeURIComponent(nama)
+        + "&email=" + encodeURIComponent(email)
+        + "&hp=" + encodeURIComponent(hp)
+        + "&pesan=" + encodeURIComponent(pesan);
+
+      fetch(sheetURL).then(() => {
+        const waText = `Halo AYMALISH Florist 🌸\n\nNama: ${nama}\nEmail: ${email}\nNo HP: ${hp}\n\nPesan:\n${pesan}`;
+        const waNumber = "6289676681087";
+        window.open("https://wa.me/" + waNumber + "?text=" + encodeURIComponent(waText), "_blank");
+        alert("Pesan berhasil dikirim!");
+        document.getElementById("contactForm").reset();
+      });
+    });
+  </script>
+
+</body>
+</html>

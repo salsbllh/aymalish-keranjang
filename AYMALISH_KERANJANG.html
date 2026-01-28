@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AYMALISH KERANJANG</title>
+
+    <style>
+      :root {
+        --primary: #ff6fae;
+        --bg: #fff5fb;
+        --soft: #ffd6e8;
+        --text: #555;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to bottom, #fff5fb, #ffe6f1);
+        min-height: 100vh;
+        padding: 40px 15px;
+        color: var(--text);
+      }
+
+      /* HEADER */
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        color: var(--primary);
+        letter-spacing: 2px;
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 14px;
+        color: #888;
+        margin-top: 6px;
+      }
+
+      /* FORM BOX */
+      .container {
+        max-width: 480px;
+        margin: auto;
+        background: white;
+        padding: 30px 25px;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(255, 111, 174, 0.2);
+        border: 2px solid var(--soft);
+      }
+
+      h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 25px;
+        font-size: 22px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px 14px;
+        margin-bottom: 14px;
+        border-radius: 10px;
+        border: 1.5px solid #ffd1e4;
+        font-size: 14px;
+        background: #fff;
+      }
+
+      textarea {
+        resize: none;
+        height: 80px;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 6px rgba(255, 111, 174, 0.3);
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(to right, #ff6fae, #ff9fc9);
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.04);
+        box-shadow: 0 6px 15px rgba(255, 111, 174, 0.4);
+      }
+
+      /* TOMBOL KEMBALI */
+      .btn-back {
+        display: block;
+        text-align: center;
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 25px;
+        border: 2px solid #ff9fc9;
+        color: #ff6fae;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .btn-back:hover {
+        background: #ffe3f0;
+        transform: scale(1.03);
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 22px;
+        font-size: 13px;
+        color: #999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div class="header">
+      <h1>AYMALISH FLORIST</h1>
+      <p>Simple • Sweet • Elegant</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="container">
+      <h2>Form Pemesanan</h2>
+
+      <form
+        id="poForm"
+        action="https://script.google.com/macros/s/AKfycbyfOh0jA5PNcvCiKz81ciKsfo4Gce3ukkyLW3uKcoqoVJ0W7M-GIIXUU5BcpS18vXcY/exec"
+        method="post"
+        target="hidden_iframe"
+        onsubmit="showPopup()"
+      >
+        <input type="text" name="nama" placeholder="Nama Lengkap" required />
+        <input
+          type="text"
+          name="no_hp"
+          placeholder="No HP / WhatsApp (Aktif)"
+          required
+        />
+        <textarea
+          name="alamat"
+          placeholder="Alamat Lengkap"
+          required
+        ></textarea>
+        <input
+          type="number"
+          name="jumlah"
+          placeholder="Jumlah Produk"
+          required
+        />
+
+        <select name="produk" required>
+          <option value="">Pilih Produk</option>
+          <option>Single Bouquet</option>
+          <option>Gantungan Kunci</option>
+          <option>Jepit Rambut</option>
+          <option>Lampu Tidur</option>
+        </select>
+
+        <select name="metode_pesan" required>
+          <option value="">Metode Pemesanan</option>
+          <option>Shopee</option>
+          <option>Tokopedia</option>
+        </select>
+
+        <input
+          type="text"
+          name="username_e_commerce"
+          placeholder="Username Akun E-Commerce"
+        />
+        <textarea
+          name="catatan"
+          placeholder="Catatan Tambahan (Opsional)"
+        ></textarea>
+
+        <button type="submit">Kirim Pesanan 💗</button>
+      </form>
+
+      <!-- TOMBOL KEMBALI -->
+      <a href="AYMALISH.html" class="btn-back">← Kembali</a>
+    </div>
+
+    <div class="footer">© AYMALISH FLORIST</div>
+
+    <!-- IFRAME & POPUP -->
+    <iframe name="hidden_iframe" style="display: none"></iframe>
+
+    <script>
+      function showPopup() {
+        setTimeout(function () {
+          alert("💐 Pesanan berhasil dikirim! Terima kasih 💗");
+          document.getElementById("poForm").reset();
+        }, 500);
+      }
+    </script>
+  </body>
+</html>

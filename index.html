@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AYMALISH FLORIST</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="css/AYMALISH.css" />
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="js/app.js" defer></script>
+
+  <style>
+    /* --- TEMA PINK & PUTIH UNTUK FORM (STYLING KHUSUS) --- */
+    .review-section {
+      padding: 4rem 7% 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #fff5f7; /* Background pink sangat muda */
+    }
+
+    .review-title {
+      margin-bottom: 0.5rem; /* Jarak sangat rapat ke form */
+      color: #ff85a2;
+    }
+
+    .review-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .review-form {
+      width: 100%;
+      max-width: 500px;
+      background-color: #ffffff; /* Putih bersih */
+      padding: 2.5rem;
+      border-radius: 15px;
+      border: 2px solid #ff85a2; /* Border pink tegas */
+      box-shadow: 0 10px 25px rgba(255, 133, 162, 0.2);
+    }
+
+    .review-form h2 {
+      color: #ff85a2;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .review-form input, 
+    .review-form textarea {
+      width: 100%;
+      padding: 1.2rem;
+      margin-bottom: 1.2rem;
+      background: #fff0f3; /* Kotak input pink pucat */
+      color: #333;
+      border: 1px solid #ffc2d1;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .review-form input::placeholder, 
+    .review-form textarea::placeholder {
+      color: #ff85a2;
+      opacity: 0.7;
+    }
+
+    .star-rating {
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+      color: #ff85a2;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .star { cursor: pointer; transition: 0.3s; }
+    .star:hover { color: #ff4d7d; transform: scale(1.1); }
+
+    .review-form button {
+      width: 100%;
+      padding: 1rem;
+      background-color: #ff85a2;
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .review-form button:hover {
+      background-color: #ff4d7d;
+      box-shadow: 0 5px 15px rgba(255, 77, 125, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo"> AYMALISH <span>FLORIST</span> </a>
+
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html".html#about">Tentang Kami</a>
+      <a href="index.html#collection">Produk</a>
+      <a href="contact.html">Kontak</a>
+      <a href="index.html#review">Ulasan</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+    </div>
+
+    <div class="shopping-cart">
+      <div class="cart-item">
+        <img src="img/single.jpg" alt="Single Bouquet">
+        <div class="item-detail">
+          <h3>Single Bouquet</h3>
+          <div class="item-price">IDR 10K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+    </div>
+  </nav>
+  <section class="hero" id="home">
+    <main class="content">
+      <h1>MADE BY <span>LOVE</span></h1>
+      <p>
+        Crafting Eternal Blooms to Grace Your World with Timeless Beauty,
+        Bringing a Touch of Elegance and a Lifetime of Inspiration.
+      </p>
+      <a href="#" class="btn-KUNJUNGI">KUNJUNGI</a>
+    </main>
+  </section>
+
+  <section id="about" class="about">
+    <h2><span>Tentang</span> Kami</h2>
+    <div class="row">
+      <div class="about-img">
+        <img src="img/WhatsApp Image 2026-01-14 at 06.57.08.jpeg" alt="Tentang Kami" />
+      </div>
+      <div class="content">
+        <h3>Welcome to Aymalish</h3>
+        <p>
+         where we craft timeless beauty through customized eternal flowers. Each piece is carefully handcrafted reflect your unique story, perfect for meaningful gifts, decorations, or personal collections. We believe beauty should last forever. Our creations add elegance and warmth to your special moments, preserving memories in art.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="collection" class="collection" x-data="collection">
+    <h2><span>Koleksi</span> Alice</h2>
+    <p>A harmonious blend of art and warmth, this wire and feather night lamp transforms any room into a tranquil haven. Its delicate design emits a soft, soothing glow that gently embraces the night, illuminating your space with elegance while wrapping your heart in a comforting warmth. A masterpiece that doesn’t just light up your room, but also your soul..</p>
+
+    <div class="row">
+      <div class="collection-card">
+        <div class="collection-icons">
+          <a href="AYMALISH_KERANJANG.html"><i data-feather="shopping-cart"></i></a>
+          <a href="#"><i data-feather="eye"></i></a>
+        </div>
+        <img src="img/single.jpg" alt="Single Bouquet" class="collection-card-img" />
+        <h3 class="collection-card-title">Single Bouquet</h3>
+        <p class="collection-card-price">IDR 10K</p>
+        <div class="collection-star">
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star"></i>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <div class="collection-icons">
+          <a href="AYMALISH_KERANJANG.html"><i data-feather="shopping-cart"></i></a>
+          <a href="#"><i data-feather="eye"></i></a>
+        </div>
+        <img src="img/ganci.jpg" alt="Gantungan Kunci" class="collection-card-img" />
+        <h3 class="collection-card-title">Gantungan Kunci</h3>
+        <p class="collection-card-price">IDR 5K/2 pcs</p>
+        <div class="collection-star">
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star" class="star"></i>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <div class="collection-icons">
+          <a href="AYMALISH_KERANJANG.html"><i data-feather="shopping-cart"></i></a>
+          <a href="#"><i data-feather="eye"></i></a>
+        </div>
+        <img src="img/jepit.jpg" alt="Jepit Rambut" class="collection-card-img" />
+        <h3 class="collection-card-title">Jepit Rambut</h3>
+        <p class="collection-card-price">IDR 5K/2 pcs</p>
+        <div class="collection-star">
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star" class="star"></i>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <div class="collection-icons">
+          <a href="AYMALISH_KERANJANG.html"><i data-feather="shopping-cart"></i></a>
+          <a href="#"><i data-feather="eye"></i></a>
+        </div>
+        <img src="img/lampu.jpg" alt="Lampu Tidur" class="collection-card-img" />
+        <h3 class="collection-card-title">Lampu Tidur</h3>
+        <p class="collection-card-price">IDR 70K</p>
+        <div class="collection-star">
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star" class="star"></i><i data-feather="star" class="star"></i>
+          <i data-feather="star"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="review-section" id="review">
+    <h2 class="review-title"><span>Ulasan</span> Pelanggan</h2>
+    <div class="review-wrapper">
+      <form class="review-form" id="reviewForm" method="POST" action="https://script.google.com/macros/s/AKfycbxrQhD0g8uGF1Cijtrll_Gm0PRhYEqZ2doIpEEaQGtm73ngTQ1N9s6edQLcMwqeqnud/exec">
+        <h2>Tulis Ulasan</h2>
+        <input type="text" name="Nama" id="reviewName" placeholder="Nama Anda" required />
+
+        <div class="star-rating" id="starRating">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+
+        <input type="hidden" name="Rating" id="ratingValue" value="0">
+        <textarea name="Ulasan" id="reviewMessage" placeholder="Tulis ulasan Anda..." required></textarea>
+        <button type="submit">Kirim Ulasan</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    feather.replace();
+  </script>
+
+  <script src="js/AYMALISHH.js"></script>
+</body>
+</html>
